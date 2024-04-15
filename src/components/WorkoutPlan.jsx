@@ -33,7 +33,8 @@ export default function WorkoutPlan({formData}) {
             try {
                 const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${formData.focusBodyPart}?limit=10`, {
                     headers: {
-                        'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
+                        // 'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688', 1st key
+                        'X-RapidAPI-Key': 'dc6124d60cmsh476709b317eb354p151cbajsncfee545867a7',
                         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
                     }
                 });
