@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hamburger-menu {
+    position: relative;
+  }
+  
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .line {
+    width: 1.5rem;
+    height: 0.2rem;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+  
+  .open {
+    background: transparent;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 2rem; /* Adjust this value as needed */
+    right: 0;
+    width: 20vh;
+    height: 100vh;
+    background-color: #fff;
+    border: 1px solid #000;
+    z-index: 9;
+  }
+  
+  .menu a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .menu a:hover {
+    background-color: rgb(254 240 138);
+  }
+
+/* exit button */
+.exit-button {
+    display: flex;
+    margin-left: auto;
+    margin-right: 4px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+  }
