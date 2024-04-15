@@ -148,30 +148,3 @@ export default function Form({formData, setFormData}) {
     )
 }
 
-
-
-
-
-// 0:"back"
-// 1:"cardio"
-// 2:"chest"
-// 3:"lower arms"
-// 4:"lower legs"
-// 5:"neck"
-// 6:"shoulders"
-// 7:"upper arms"
-// 8:"upper legs"
-// 9:"waist"
-
-
-// lets say user choose "back", and equipment of choice is bodyweight, I fetch a list of 40, 
-
-// Do you have back-pain? If yes = [no deadlifts, squat]
-
-// Do you want to include cardio?
-
-// Do you want to train your core today?
-
-// Strengh Level (4-5 workout) 
-
-// Routine Focus

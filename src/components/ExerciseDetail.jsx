@@ -22,41 +22,38 @@ export default function ExerciseDetail() {
     //     setExercsieDetail(exerciseByID()[0])
     // },[])
 
-    console.log(params.id)
-
-
-    //     useEffect(() => {
-    //     if (!params) {
-    //         return; 
-    //     }
+        useEffect(() => {
+        if (!params) {
+            return; 
+        }
     
-    //     setIsLoading(true);
+        setIsLoading(true);
     
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${params.id}`, {
-    //                 headers: {
-    //                     'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
-    //                     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-    //                 }
-    //             });
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${params.id}`, {
+                    headers: {
+                        'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
+                        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+                    }
+                });
     
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch data');
-    //             }
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
                 
-    //         const data = await response.json();
-    //         setExercsieDetail(data);
-    //         setIsLoading(false); 
-    //         } catch (error) {
-    //             console.error(error);
-    //         } finally {
-    //              setIsLoading(false);
-    //         }
-    //     };
+            const data = await response.json();
+            setExercsieDetail(data);
+            setIsLoading(false); 
+            } catch (error) {
+                console.error(error);
+            } finally {
+                 setIsLoading(false);
+            }
+        };
     
-    //     fetchData();
-    // }, [params])
+        fetchData();
+    }, [params])
 
     if (!params) {
         return null

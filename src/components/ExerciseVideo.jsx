@@ -5,33 +5,33 @@ export default function ExerciseVideo(props) {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
-    // useEffect(() => {
-    //     if (props.name) {
-    //         setIsLoading(true)
-    //         const fetchData = async () => {
-    //             try {
-    //                 const response = await fetch(`https://youtube-search-and-download.p.rapidapi.com/search?query=${props.name}`, {
-    //                     headers: {
-    //                         'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
-    //                         'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
-    //                     }
-    //                 })
-    //                 if (!response.ok) {
-    //                     throw new Error('Failed to fetch data')
-    //                 }
-    //                 const data = await response.json()
-    //                 setExerciseVideos(data.contents)
-    //             } catch (error) {
-    //                 console.error(error)
-    //                 setError('Failed to fetch exercise videos. Please try again later.')
-    //             } finally {
-    //                 setIsLoading(false)
-    //             }
-    //         }
+    useEffect(() => {
+        if (props.name) {
+            setIsLoading(true)
+            const fetchData = async () => {
+                try {
+                    const response = await fetch(`https://youtube-search-and-download.p.rapidapi.com/search?query=${props.name}`, {
+                        headers: {
+                            'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
+                            'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
+                        }
+                    })
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch data')
+                    }
+                    const data = await response.json()
+                    setExerciseVideos(data.contents)
+                } catch (error) {
+                    console.error(error)
+                    setError('Failed to fetch exercise videos. Please try again later.')
+                } finally {
+                    setIsLoading(false)
+                }
+            }
 
-    //         fetchData()
-    //     }
-    // }, [props.name])
+            fetchData()
+        }
+    }, [props.name])
 
     if (!props.name) {
         return null

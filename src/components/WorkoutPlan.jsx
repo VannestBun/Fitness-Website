@@ -21,57 +21,56 @@ export default function WorkoutPlan({formData}) {
         setWorkoutDataAbs(absData)
     }, [formData])
 
-    console.log(formData)
 
-    // useEffect(() => {
-    //     if (!formData.focusBodyPart) {
-    //         return; 
-    //     }
+    useEffect(() => {
+        if (!formData.focusBodyPart) {
+            return; 
+        }
     
-    //     setIsLoading(true);
+        setIsLoading(true);
     
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${formData.focusBodyPart}?limit=10`, {
-    //                 headers: {
-    //                     'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
-    //                     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
-    //                 }
-    //             });
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${formData.focusBodyPart}?limit=10`, {
+                    headers: {
+                        'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
+                        'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+                    }
+                });
     
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to fetch data');
-    //             }
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
                 
-    //         const data = await response.json();
+            const data = await response.json();
     
-    //         let numExercises = 0;
-    //         switch (formData.fitnessLevel) {
-    //             case 'beginner':
-    //                 numExercises = 3;
-    //                 break;
-    //             case 'intermediate':
-    //                 numExercises = 4;
-    //                 break;
-    //             case 'advanced':
-    //                 numExercises = 5;
-    //                 break;
-    //             default:
-    //                 numExercises = 0;
-    //                 break;
-    //         }
-    //         const selectedExercise = data.slice(0, numExercises)
-    //         setWorkoutDataBodyPart(selectedExercise);
-    //         setIsLoading(false); 
-    //         } catch (error) {
-    //             console.error(error);
-    //         } finally {
-    //              setIsLoading(false);
-    //         }
-    //     };
+            let numExercises = 0;
+            switch (formData.fitnessLevel) {
+                case 'beginner':
+                    numExercises = 3;
+                    break;
+                case 'intermediate':
+                    numExercises = 4;
+                    break;
+                case 'advanced':
+                    numExercises = 5;
+                    break;
+                default:
+                    numExercises = 0;
+                    break;
+            }
+            const selectedExercise = data.slice(0, numExercises)
+            setWorkoutDataBodyPart(selectedExercise);
+            setIsLoading(false); 
+            } catch (error) {
+                console.error(error);
+            } finally {
+                 setIsLoading(false);
+            }
+        };
     
-    //     fetchData();
-    // }, [formData.focusBodyPart])
+        fetchData();
+    }, [formData.focusBodyPart])
     
 
 
