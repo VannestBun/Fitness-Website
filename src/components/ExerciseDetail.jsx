@@ -33,7 +33,7 @@ export default function ExerciseDetail() {
             try {
                 const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${params.id}`, {
                     headers: {
-                        'X-RapidAPI-Key': 'f892ffe4e6mshedbbb9318b7f31fp198fbbjsneaa2c91db688',
+                        'X-RapidAPI-Key': 'dc6124d60cmsh476709b317eb354p151cbajsncfee545867a7',
                         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
                     }
                 });
