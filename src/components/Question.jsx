@@ -62,7 +62,7 @@ export default function Form({formData, setFormData}) {
                     onChange={handleChange}
                     name="primarygoal"
                     className="mb-10"
-                    // required
+                    required
                 >
                     <option value="">-- Choose --</option>
                     <option value="aesthetic">Aesthetic</option>
@@ -78,7 +78,7 @@ export default function Form({formData, setFormData}) {
                     onChange={handleChange}
                     name="focusBodyPart"
                     className="mb-10"
-                    // required
+                    required
                 >
                     <option value="">-- Choose --</option>
                     <option value="back">Back</option>
@@ -109,7 +109,7 @@ export default function Form({formData, setFormData}) {
                     onChange={handleChange}
                     name="fitnessLevel"
                     className="mb-10"
-                    // required
+                    required
                 >
                     <option value="">-- Choose --</option>
                     <option value="beginner">Beginner</option>
